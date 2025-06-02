@@ -10,5 +10,5 @@ username.addEventListener('input', validateInputs);
 password.addEventListener('input', validateInputs);
 
 loginBtn.addEventListener('click', () => {
-    alert('⚠️ 這是釣魚網站，請勿輸入真實帳號密碼！');
+    alert('⚠️ 這是一個模擬 Instagram 登入頁面，請勿輸入真實帳號密碼！');
 });
