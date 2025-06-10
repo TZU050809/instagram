@@ -135,3 +135,16 @@ button:disabled {
 .signup-link:hover {
     text-decoration: underline;
 }
+.welcome-screen {
+    text-align: center;
+    background: white;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    width: 300px;
+}
+.welcome-screen h1 {
+    color: #4cb5f9;
+    margin-bottom: 10px;
+}

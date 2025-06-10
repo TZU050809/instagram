@@ -1,14 +1,30 @@
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const loginBtn = document.getElementById('login-btn');
+document.addEventListener("DOMContentLoaded", function () {
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const loginBtn = document.getElementById("login-btn");
 
-function validateInputs() {
-    loginBtn.disabled = !(username.value.trim() && password.value.trim());
-}
+    function updateButtonState() {
+        loginBtn.disabled = !(usernameInput.value && passwordInput.value);
+    }
 
-username.addEventListener('input', validateInputs);
-password.addEventListener('input', validateInputs);
+    usernameInput.addEventListener("input", updateButtonState);
+    passwordInput.addEventListener("input", updateButtonState);
 
-loginBtn.addEventListener('click', () => {
-    alert('⚠️ 這是一個模擬 Instagram 登入頁面，請勿輸入真實帳號密碼！');
+    loginBtn.addEventListener("click", function () {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        // 模擬帳密驗證（可換成真實API驗證）
+        if (username === "test" && password === "1234") {
+            document.body.innerHTML = `
+        <div class="welcome-screen">
+          <h1>歡迎登入成功！</h1>
+          <p>您好，<strong>${username}</strong>！</p>
+        </div>
+      `;
+            document.body.style.justifyContent = "center";
+        } else {
+            alert("帳號或密碼錯誤！");
+        }
+    });
 });
